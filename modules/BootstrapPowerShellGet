@@ -1,3 +1,13 @@
+##AH:UseTextMode
 module BootstrapPowerShellGet
 {
+    
+    
+    with executionPolicy=always {
+        # Must have this package available
+        PSCall Install-PowerShellModule
+        (
+            ModuleName: PackageManagement
+        );
+    }
 }

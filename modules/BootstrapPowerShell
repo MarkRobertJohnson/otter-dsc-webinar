@@ -1,3 +1,7 @@
+##AH:UseTextMode
 module BootstrapPowerShell
 {
+    with executionPolicy=always {
+        Chocolatey::Install-Package PowerShell;
+    }
 }

@@ -1,6 +1,6 @@
 param(
     [parameter(Mandatory=$true,
-        HelpMessage="The name of the module ID in the PowerShell Gallery"
+        HelpMessage="The name of the module ID in the PowerShell Gallery")]
     [string]$ModuleName)
 
 # Test for module

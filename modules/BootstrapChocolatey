@@ -1,10 +1,9 @@
 ##AH:UseTextMode
 module BootstrapChocolatey
 {
-    PSDsc PackageManagement
+    PSDsc PackageManagement::PackageManagement
     (
         Ensure: Present,
-        Name: cChoco,
-        ModuleName: PackageManagement
+        Name: cChoco
     );
 }

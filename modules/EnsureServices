@@ -1,0 +1,15 @@
+##AH:UseTextMode
+module EnsureServices<@ServicesToEnsure>
+{
+    # Loop
+    foreach $ServiceName in @ServicesToEnsure
+    {
+        PSDsc Service (
+             Otter_ConfigurationKey: Name,
+             Name: $ServiceName,
+             State: Running,
+             Ensure: Present
+        
+        )
+    }
+}

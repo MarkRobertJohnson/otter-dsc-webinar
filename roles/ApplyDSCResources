@@ -1,0 +1,10 @@
+##AH:UseTextMode
+
+
+#PSDsc xWindowsUpdate::xHotfix
+#(
+#    Otter_ConfigurationKey: Id,
+#    Ensure: Present,
+#    Path: c:/temp/Windows8.1-KB2908279-v2-x86.msu,
+#    Id: KB2908279
+#);

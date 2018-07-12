@@ -1,0 +1,5 @@
+# Loop
+foreach $num in @(1,2,3)
+{
+    Log-Debug $num;
+}

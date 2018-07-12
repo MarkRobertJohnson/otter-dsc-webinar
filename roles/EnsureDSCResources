@@ -1,3 +1,6 @@
+##AH:UseTextMode
+
+
 # Loop
 foreach $ModuleName in @PowershellModules
 {
@@ -8,11 +11,11 @@ foreach $ModuleName in @PowershellModules
         CollectScript: Test-PowerShellModuleInstalled,
         ConfigureScript: Install-PowerShellModule,
         UseExitCode: true,
-        CollectScriptParams: @(
-$ModuleName
+        CollectScriptParams: %(
+ModuleName: $ModuleName
 ),
-        ConfigureScriptParams: @(
-$ModuleName
+        ConfigureScriptParams: %(
+ModuleName: $ModuleName
 )
     );
 }

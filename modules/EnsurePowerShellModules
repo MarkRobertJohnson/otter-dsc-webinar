@@ -6,6 +6,11 @@ module EnsurePowerShellModules<@PowershellModules>
     # Loop
     foreach $ModuleName in @PowershellModules
     {
+        PSDsc PackageManagement::PackageManagement (
+            Otter_ConfigurationKey: Name,
+            Name: $ModuleName
+        );
+        
         PSEnsure
         (
             Key: DSC Module: $ModuleName,

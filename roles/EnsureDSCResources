@@ -10,7 +10,6 @@ foreach $ModuleName in @PowershellModules
         Value: True,
         CollectScript: Test-PowerShellModuleInstalled,
         ConfigureScript: Install-PowerShellModule,
-        UseExitCode: true,
         CollectScriptParams: %(
 ModuleName: $ModuleName
 ),

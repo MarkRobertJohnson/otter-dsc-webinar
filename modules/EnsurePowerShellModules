@@ -1,3 +1,23 @@
-module EnsurePowerShellModules
+##AH:UseTextMode
+##AH:Description Ensures the provided list of PowerShell modules is installed
+module EnsurePowerShellModules<@PowershellModules>
 {
+    # #AH:UseTextMode
+    # Loop
+    foreach $ModuleName in @PowershellModules
+    {
+        PSEnsure
+        (
+            Key: DSC Module: $ModuleName,
+            Value: True,
+            CollectScript: Test-PowerShellModuleInstalled,
+            ConfigureScript: Install-PowerShellModule,
+            CollectScriptParams: %(
+                ModuleName: $ModuleName
+            ),
+            ConfigureScriptParams: %(
+                ModuleName: $ModuleName
+            )
+        );
+    }
 }

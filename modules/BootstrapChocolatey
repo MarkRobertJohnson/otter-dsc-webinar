@@ -1,12 +1,14 @@
+##AH:UseTextMode
 module BootstrapChocolatey
 {
-    with executionPolicy=always {
+    {
         set $script = >>
            if(-not (Get-Command choco -erroraction silentlycontinue)) {
-                Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+                Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))|out-null
            }
-       
+        1
        >>;
-       set $result = $PSEval($script);   
+
+        set $result = $PSEval($script);
     }
 }

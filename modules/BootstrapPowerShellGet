@@ -4,6 +4,7 @@ module BootstrapPowerShellGet
     
     
     with executionPolicy=always {
+        set $a = $PSExec("Install-Module PackageManagement -Force  -AllowClobber -verbose");
         # Must have this package available
         PSCall Install-PowerShellModule
         (

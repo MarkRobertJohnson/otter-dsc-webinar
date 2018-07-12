@@ -1,17 +1,18 @@
-##AH:UseTextMode
-
-
 # Loop
 foreach $ModuleName in @PowershellModules
 {
-    set $script =  $Eval("if(Get-Module -Name $ModuleName -List -ErrorAction SilentlyContinue) { exit 0 } else {exit -1 })");
-    Log-Information $script;
     PSEnsure
     (
         Key: DSC Module: $ModuleName,
-        Value: 0,
-        Collect: $Eval($script),
-        Configure: install-module -Name $ModuleName -Force -AllowClobber,
-        UseExitCode: true
+        Value: True,
+        CollectScript: Test-PowerShellModuleInstalled,
+        ConfigureScript: Install-PowerShellModule,
+        UseExitCode: true,
+        CollectScriptParams: @(
+$ModuleName
+),
+        ConfigureScriptParams: @(
+$ModuleName
+)
     );
 }

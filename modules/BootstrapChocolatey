@@ -5,6 +5,6 @@ module BootstrapChocolatey
     (
         Ensure: Present,
         Name: cChoco,
-        Module: PackageManagement
+        ModuleName: PackageManagement
     );
 }

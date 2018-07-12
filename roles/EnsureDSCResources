@@ -1,20 +1,8 @@
-##AH:UseTextMode
+call BootstrapPowerShellGet();
 
+call BootstrapChocolatey();
 
-# Loop
-foreach $ModuleName in @PowershellModules
-{
-    PSEnsure
-    (
-        Key: DSC Module: $ModuleName,
-        Value: True,
-        CollectScript: Test-PowerShellModuleInstalled,
-        ConfigureScript: Install-PowerShellModule,
-        CollectScriptParams: %(
-ModuleName: $ModuleName
-),
-        ConfigureScriptParams: %(
-ModuleName: $ModuleName
-)
-    );
-}
+call EnsurePowerShellModules
+(
+    PowershellModules: @PowerShellModules
+);

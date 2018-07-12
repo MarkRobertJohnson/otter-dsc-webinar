@@ -4,6 +4,7 @@ module BootstrapChocolatey
     PSDsc PackageManagement
     (
         Ensure: Present,
-        Name: cChoco
+        Name: cChoco,
+        Module: PackageManagement
     );
 }

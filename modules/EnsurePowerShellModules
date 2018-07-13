@@ -6,7 +6,7 @@ module EnsurePowerShellModules<@PowershellModules>
     # Loop
     foreach $ModuleName in @PowershellModules
     {
-        PSDsc PackageManagement::PackageManagement (
+        PSDsc PackagemanagementProviderresource::PackageManagement (
             Otter_ConfigurationKey: Name,
             Name: $ModuleName
         );

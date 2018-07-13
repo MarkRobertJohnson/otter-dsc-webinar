@@ -1,0 +1,6 @@
+PSDsc Environment (
+   Name: MyFirstOtterVar,
+   Value: This variable is set on $ServerName,
+   Ensure: Present,
+   Path: false
+);

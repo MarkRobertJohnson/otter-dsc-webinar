@@ -1,7 +1,7 @@
 ##AH:UseTextMode
 module BootstrapChocolatey
 {
-    {
+    with executionPolicy=always {
         set $script = >>
            if(-not (Get-Command choco -erroraction silentlycontinue)) {
                 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))|out-null
@@ -10,5 +10,19 @@ module BootstrapChocolatey
        >>;
 
         set $result = $PSEval($script);
+        
+        PSEnsure
+        (
+            Key: DSC Module: cChoco,
+            Value: True,
+            CollectScript: Test-PowerShellModuleInstalled,
+            ConfigureScript: Install-PowerShellModule,
+            CollectScriptParams: %(
+                    ModuleName: cChoco
+                ),
+            ConfigureScriptParams: %(
+                    ModuleName: cChoco
+                )
+        );
     }
 }

@@ -11,18 +11,18 @@ module BootstrapChocolatey
 
         set $result = $PSEval($script);
         
-        PSEnsure
-        (
-            Key: DSC Module: cChoco,
-            Value: True,
-            CollectScript: Test-PowerShellModuleInstalled,
-            ConfigureScript: Install-PowerShellModule,
-            CollectScriptParams: %(
-                    ModuleName: cChoco
-                ),
-            ConfigureScriptParams: %(
-                    ModuleName: cChoco
-                )
-        );
+       # PSEnsure
+       # (
+       #     Key: DSC Module: cChoco,
+       #     Value: True,
+       #     CollectScript: Test-PowerShellModuleInstalled,
+       #     ConfigureScript: Install-PowerShellModule,
+       #     CollectScriptParams: %(
+       #             ModuleName: cChoco
+       #         ),
+       #     ConfigureScriptParams: %(
+       #             ModuleName: cChoco
+       #         )
+       # );
     }
 }

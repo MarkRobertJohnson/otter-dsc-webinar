@@ -13,7 +13,6 @@ Configuration ConfigWeb
         Name        = "W3SVC"
         StartupType = "Automatic"
         State       = "Running"
-        DependsOn   = @('RegistryExample')
         
     }
 }

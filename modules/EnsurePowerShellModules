@@ -10,19 +10,5 @@ module EnsurePowerShellModules<@PowershellModules>
             Otter_ConfigurationKey: Name,
             Name: $ModuleName
         );
-        
-        PSEnsure
-        (
-            Key: DSC Module: $ModuleName,
-            Value: True,
-            CollectScript: Test-PowerShellModuleInstalled,
-            ConfigureScript: Install-PowerShellModule,
-            CollectScriptParams: %(
-                ModuleName: $ModuleName
-            ),
-            ConfigureScriptParams: %(
-                ModuleName: $ModuleName
-            )
-        );
     }
 }

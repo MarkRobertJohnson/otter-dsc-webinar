@@ -8,11 +8,11 @@ Configuration ConfigWeb
         ValueData   = "TestData"
     }
     
-   #Service ServiceExample
-   #{
-   #    Name        = "W3SVC"
-   #    StartupType = "Automatic"
-   #    State       = "Running"
-   #    
-   #}
+   Service ServiceExample
+   {
+       Name        = "W3SVC"
+       StartupType = "Automatic"
+       State       = "Running"
+       
+   }
 }

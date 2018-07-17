@@ -1,0 +1,21 @@
+
+@{
+    AllNodes =
+    @(
+        @{
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
+        },
+<% foreach $role in @AllRoles { %>
+
+    <% foreach $server in @ServersInRole($role) { %>
+    
+        @{
+            NodeName = "$server"
+            Role = "$role"
+        },
+    
+    <% } %>
+<% } %>
+
+}

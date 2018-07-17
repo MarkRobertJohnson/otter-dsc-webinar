@@ -9,6 +9,8 @@ module ServerDSCResources
     (
         PowershellModules: @PowerShellModules
     );
+    
+    call SetEnvDSCResource();
 
     call ConfigServer();
 }

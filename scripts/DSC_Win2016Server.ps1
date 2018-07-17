@@ -10,13 +10,26 @@ Configuration ServerConfig
         ValueData   = "TestData"
     }
     
-    foreach($var in (@{'var1'='my/path1';'var2' = 'my/path2'; 'var3' = 'my/path3'}).GetEnumerator()) {
-        Environment $var.name
-        {
-            Ensure      = "Present"
-            Name        = $var.name
-            Value       = $var.value
-            Path        = $false
-        }
+
+    Environment Var1
+    {
+        Ensure      = "Present"
+        Name        = 'Var1'
+        Value       = 'Var1Value'
     }
+
+    Environment Var2
+    {
+        Ensure      = "Present"
+        Name        = 'Var2'
+        Value       = 'Var2Value'
+    }
+
+    Environment Var3
+    {
+        Ensure      = "Present"
+        Name        = 'Var3'
+        Value       = 'Var3Value'
+    }
+
 }

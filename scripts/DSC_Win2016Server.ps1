@@ -1,6 +1,6 @@
 Configuration ServerConfig
 { 
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration
+    Import-DscResource –ModuleName PSDesiredStateConfiguration
     
     Registry RegistryExample
     {
@@ -10,7 +10,7 @@ Configuration ServerConfig
         ValueData   = "TestData"
     }
     
-    foreach($var in @{'var1'='my/path1','var2' = 'my/path2', 'var3' = 'my/path3'}) {
+    foreach($var in @{'var1'='my/path1';'var2' = 'my/path2'; 'var3' = 'my/path3'}) {
         Environment $var.name
         {
             Ensure      = "Present"

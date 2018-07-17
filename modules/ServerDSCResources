@@ -1,3 +1,4 @@
+##AH:UseTextMode
 module ServerDSCResources
 {
     call BootstrapPowerShellGet();
@@ -9,5 +10,5 @@ module ServerDSCResources
         PowershellModules: @PowerShellModules
     );
 
-    call ServerConfig();
+    call ConfigServer();
 }

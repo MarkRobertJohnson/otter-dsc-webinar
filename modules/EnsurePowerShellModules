@@ -3,7 +3,7 @@
 module EnsurePowerShellModules<@PowershellModules>
 {
     set @RaftPowerShellModules = @(cNtfsAccessControl, xWindowsUpdate, xWebAdministration, xStorage,
-     xNetworking, ReverseDSC, xRemoteDesktopAdmin, xRemoteDesktopSessionHost, cChoco, xCertificate, AzureRM.profile, SystemLocaleDsc);
+     xNetworking, ReverseDSC, xRemoteDesktopAdmin, xRemoteDesktopSessionHost, xCertificate, AzureRM.profile, SystemLocaleDsc);
 
     # Append modules
     foreach $ModuleName in @RaftPowerShellModules

@@ -1,0 +1,16 @@
+##AH:Description Sets machine-level environment variables
+module SetEnvironmentVariables<%Variables = %()>
+{
+    foreach $varname in @MapKeys(%expectedServerVarValues)
+    {
+        set $expectedVarValue = %expectedServerVarValues[$varname];
+
+        PSDsc Environment
+        (
+            Name: $varname,
+            Value: %expectedServerVarValues[$varname],
+            Ensure: Present,
+            Path: false
+        );
+    }
+}

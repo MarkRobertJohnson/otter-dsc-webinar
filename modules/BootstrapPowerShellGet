@@ -4,20 +4,8 @@ module BootstrapPowerShellGet
     
     
     with executionPolicy=always {
-        set $b = $PSEval("Install-Module PackageManagementProviderResource -Force  -AllowClobber -verbose|out-null; $true");
-        set $a = $PSEval("Install-Module PackageManagement -Force  -AllowClobber -verbose|out-null; $true");
-        
-        # Must have this package available
-        PSCall Install-PowerShellModule
-        (
-          ModuleName: PackageManagementProviderResource  
-        );
-        
-        PSCall Install-PowerShellModule
-        (
-            ModuleName: PackageManagement
-        );
-        
-
+        set $b = $PSEval("if(!(Get-DscResource -Module PackageManagementProviderResource -ErrorAction SilentlyContinue)) {Install-Module PackageManagementProviderResource -Force  -AllowClobber -verbose|out-null}; $true");
+        set $a = $PSEval("if(!(Get-DscResource -Module PackageManagement -ErrorAction SilentlyContinue)) {Install-Module PackageManagement -Force  -AllowClobber -verbose|out-null}; $true");
+      
     }
 }

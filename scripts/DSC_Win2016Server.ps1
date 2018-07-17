@@ -10,7 +10,7 @@ Configuration ServerConfig
         ValueData   = "TestData"
     }
     
-    foreach($var in @{'var1'='my/path1';'var2' = 'my/path2'; 'var3' = 'my/path3'}) {
+    foreach($var in (@{'var1'='my/path1';'var2' = 'my/path2'; 'var3' = 'my/path3'}).GetEnumerator()) {
         Environment $var.name
         {
             Ensure      = "Present"

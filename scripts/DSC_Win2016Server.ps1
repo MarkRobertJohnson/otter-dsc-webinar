@@ -9,7 +9,7 @@ Configuration ServerConfig
     }
     
     foreach($path in @('my/path1','my/path2','my/path3')) {
-        Environment SetVarExample
+        Environment $path
         {
             Ensure      = "Present"
             Name        = "MYCUSTOMPATH"

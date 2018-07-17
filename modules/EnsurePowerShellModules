@@ -21,7 +21,7 @@ module EnsurePowerShellModules<@PowershellModules>
         (
             Otter_ConfigurationKey: Name,
             Name: $ModuleName,
-            Ensure: Absent
+            Ensure: Present
         );
     }
 }

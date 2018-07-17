@@ -6,6 +6,7 @@ module EnsurePowerShellModules<@PowershellModules>
      #xNetworking, ReverseDSC, xRemoteDesktopAdmin, xRemoteDesktopSessionHost, xCertificate, AzureRM.profile, SystemLocaleDsc);
      
     #set @RaftPowerShellModules = @(SystemLocaleDsc)
+    set @RaftPowerShellModules = @();
 
     # Append modules
     foreach $ModuleName in @RaftPowerShellModules

@@ -1,3 +1,13 @@
 module ServerDSCResources
 {
+    call BootstrapPowerShellGet();
+
+    call BootstrapChocolatey();
+
+    call EnsurePowerShellModules
+    (
+        PowershellModules: @PowerShellModules
+    );
+
+    call ServerConfig();
 }

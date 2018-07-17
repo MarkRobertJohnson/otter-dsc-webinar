@@ -1,7 +1,0 @@
-module ConfigForWeb
-{
-    Ensure-DSCConfig
-    (
-        DscScriptAsset: DSC_ConfigWeb
-    );
-}

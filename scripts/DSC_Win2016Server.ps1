@@ -1,5 +1,7 @@
 Configuration ServerConfig
 { 
+    Import-DscResource –ModuleName 'PSDesiredStateConfiguration
+    
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
@@ -8,12 +10,12 @@ Configuration ServerConfig
         ValueData   = "TestData"
     }
     
-    foreach($path in @('my/path1','my/path2','my/path3')) {
-        Environment $path
+    foreach($var in @{'var1'='my/path1','var2' = 'my/path2', 'var3' = 'my/path3')) {
+        Environment $var.name
         {
             Ensure      = "Present"
-            Name        = "MYCUSTOMPATH"
-            Value       = $path
+            Name        = $var.name
+            Value       = $var.value
             Path        = $true
         }
     }

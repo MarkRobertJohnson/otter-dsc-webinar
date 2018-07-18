@@ -4,10 +4,11 @@ module ServerDSCResources
     call BootstrapPowerShellGet();
 
     call BootstrapChocolatey();
-
+    
     call EnsurePowerShellModules
     (
-        PowershellModules: @PowerShellModules
+        PowershellModules: @PowerShellModules,
+        Ensure: Present
     );
     
     call SetEnvDSCResource();

@@ -1,10 +1,10 @@
 ##AH:UseTextMode
 
-set @PowerShellModulesToInstall = @(cNtfsAccessControl,xWindowsUpdate,xWebAdministration);
+set @PowerShellModulesToRemove= @(cNtfsAccessControl,xWindowsUpdate,xWebAdministration);
 
 call EnsurePowerShellModules
 (
-    PowershellModules: @PowerShellModules,
+    PowershellModules: @PowerShellModulesToRemove,
     Ensure: Absent
 );
 

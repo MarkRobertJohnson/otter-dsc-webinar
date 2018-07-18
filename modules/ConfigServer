@@ -2,7 +2,6 @@ module ConfigServer
 {
     Ensure-DSCConfig
     (
-        DscScriptAsset: DSC_Win2016Server,
-        DebugLogging: true
+        DscScriptAsset: DSC_Win2016Server
     );
 }

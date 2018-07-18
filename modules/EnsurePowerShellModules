@@ -3,7 +3,7 @@
 module EnsurePowerShellModules<@PowershellModules, $Ensure = Present>
 {
      set @RaftPowerShellModules = @();
-
+     
     # Append modules
     foreach $ModuleName in @RaftPowerShellModules
     {

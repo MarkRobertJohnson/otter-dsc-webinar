@@ -1,6 +1,6 @@
 Configuration ServerConfig
 { 
-    Import-DscResource –ModuleName PSDesiredStateConfiguration
+    Import-DscResource –ModuleName PSDscResources
     
     Registry RegistryExample
     {
@@ -16,7 +16,7 @@ Configuration ServerConfig
             Ensure      = "Present"
             Name        = $var.name
             Value       = $var.value
-            Path        = $false
+            Target      = 'Machine'
         }
     }
 }

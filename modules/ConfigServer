@@ -4,5 +4,4 @@ module ConfigServer
     (
         DscScriptAsset: DSC_Win2016Server
     );
-
 }

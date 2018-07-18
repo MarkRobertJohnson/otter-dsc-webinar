@@ -2,11 +2,8 @@
 ##AH:Description Ensures the provided list of PowerShell modules is installed
 module EnsurePowerShellModules<@PowershellModules, $Ensure = Present>
 {
-    # set @RaftPowerShellModules = @(cNtfsAccessControl, xWindowsUpdate, xWebAdministration, xStorage,
-    # xNetworking, ReverseDSC, xRemoteDesktopAdmin, xRemoteDesktopSessionHost, xCertificate, AzureRM.profile, SystemLocaleDsc);
-    set @RaftPowerShellModules = @(cNtfsAccessControl,xWindowsUpdate,xWebAdministration);
-
-    # set @RaftPowerShellModules = @();
+     set @RaftPowerShellModules = @();
+     
     # Append modules
     foreach $ModuleName in @RaftPowerShellModules
     {

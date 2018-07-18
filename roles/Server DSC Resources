@@ -1,3 +1,11 @@
 ##AH:UseTextMode
 
+set @PowerShellModulesToInstall = @(cNtfsAccessControl,xWindowsUpdate,xWebAdministration);
+
+call EnsurePowerShellModules
+(
+    PowershellModules: @PowerShellModules,
+    Ensure: Absent
+);
+
 call ServerDSCResources();

@@ -1,6 +1,6 @@
 Configuration ServerConfig
 { 
-    Import-DscResource –ModuleName PSDesiredStateConfiguration
+    Import-DscResource –ModuleName PSDscResources
     
     Registry RegistryExample
     {
@@ -10,13 +10,13 @@ Configuration ServerConfig
         ValueData   = "TestData"
     }
     
-    foreach($var in (@{'var1'='my/path1';'var2' = 'my/path2'; 'var3' = 'my/path3'}).GetEnumerator()) {
+    foreach($var in (@{'var1'='my/path4';'var2' = 'my/path5'; 'var3' = 'my/path6'}).GetEnumerator()) {
         Environment $var.name
         {
             Ensure      = "Present"
             Name        = $var.name
             Value       = $var.value
-            Path        = $false
+            Target      = 'Machine'
         }
     }
 }

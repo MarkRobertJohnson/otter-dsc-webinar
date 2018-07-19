@@ -20,13 +20,13 @@ You then can create a new Otter Git raft by doing:
 
 2)	Go to the Administration section (the Gear icon in the upper right of the screen ![image](https://user-images.githubusercontent.com/24645219/42730032-691c4e2a-879f-11e8-8e28-ba4077e8c26a.png))
 
-3)	Then click the â€œRaftsâ€ link in the â€œComponents & Extensibilityâ€ section
+3)	Then click the “Rafts” link in the “Components & Extensibility” section
  
 ![2](https://user-images.githubusercontent.com/24645219/42769205-689dc180-88d6-11e8-90bb-893b58bb466e.png)
  
-4)	Then click the â€œCreate Raftâ€ button
+4)	Then click the “Create Raft” button
 
-5)	Then click the â€œGitâ€ button from the dialog window
+5)	Then click the “Git” button from the dialog window
  
 ![3](https://user-images.githubusercontent.com/24645219/42769644-a4be6e02-88d7-11e8-8d81-eeda0b92f984.png)
 
@@ -34,23 +34,23 @@ You then can create a new Otter Git raft by doing:
  
 ![4](https://user-images.githubusercontent.com/24645219/42769789-1dc69a9a-88d8-11e8-83ac-c1480f26c1e4.png)
  
-7)	The Name (1) should be something meaningful, since we intend to replace the default raft with our new Git Raft, letâ€™s name it â€œDefault_Newâ€
+7)	The Name (1) should be something meaningful, since we intend to replace the default raft with our new Git Raft, let’s name it “Default_New”
 
-8)	In the  â€œRemote Repository ULâ€ (2) put the address of your fork (i.e. https://github.com/MarkRobertJohnson/otter-dsc-webinar.git) 
+8)	In the  “Remote Repository UL” (2) put the address of your fork (i.e. https://github.com/MarkRobertJohnson/otter-dsc-webinar.git) 
 
 9)	Then put your GitHub username and password in fields 3 & 4 (You can use other Git hosting services such as GitLab and BitBucket too)
 
-10)	Then for the branch, letâ€™s use the â€œdevâ€ branch for the default (we generally would not want to edit directly on master, because we are trying embrace development best-practices)
+10)	Then for the branch, let’s use the “dev” branch for the default (we generally would not want to edit directly on master, because we are trying embrace development best-practices)
 
 11)	Then click save
 
-12)	Then delete the existing â€œDefaultâ€ raft (Click the red X)
+12)	Then delete the existing “Default” raft (Click the red X)
 
-13)	Then edit the â€œDefault_Newâ€ rafts and rename it to â€œDefaultâ€
+13)	Then edit the “Default_New” rafts and rename it to “Default”
 
 14)	The new Git raft is now set up and ready to go to work
 
-15)	To verify the Git Raft is working, browse to â€œAssetsâ€ and you should see something like this (with the exception of multiple rafts, we will add more rafts later on)
+15)	To verify the Git Raft is working, browse to “Assets” and you should see something like this (with the exception of multiple rafts, we will add more rafts later on)
 
 ![5](https://user-images.githubusercontent.com/24645219/42769216-6fa34b1c-88d6-11e8-91c7-2a3aeeeed346.png)
 
@@ -58,11 +58,11 @@ You then can create a new Otter Git raft by doing:
 
 Otter allows using most, if not all DSC resources directly within OtterScript.  This tutorial will walk you through how to execute your first DSC resource
 
-First, go to the Servers, you will see one server named â€œLOCALHOSTâ€, that is your local machine.  Click LOCALHOST to go to the server page then scroll down to the â€œConfiguration Planâ€ section, and click â€œcreateâ€
+First, go to the Servers, you will see one server named “LOCALHOST”, that is your local machine.  Click LOCALHOST to go to the server page then scroll down to the “Configuration Plan” section, and click “create”
 
 ![6](https://user-images.githubusercontent.com/24645219/42769650-a8408bc8-88d7-11e8-9618-9553f840155b.png)
 
-An editor window will now pop up, click the purple â€œSwitch to Text Modeâ€ button in the lower right (DSC resources can only be created in Text Mode)
+An editor window will now pop up, click the purple “Switch to Text Mode” button in the lower right (DSC resources can only be created in Text Mode)
 
 ![7](https://user-images.githubusercontent.com/24645219/42769233-778e64e2-88d6-11e8-8742-e3f5b69f1e42.png)
 
@@ -77,7 +77,7 @@ PSDsc Environment (
 );
 ~~~
 
-Then click the â€œSave Planâ€ button.  The dialog will close and you will return to the server screen.  The server should now check the configuration automatically, if not, click the â€œCheck Configurationâ€ button
+Then click the “Save Plan” button.  The dialog will close and you will return to the server screen.  The server should now check the configuration automatically, if not, click the “Check Configuration” button
 
 ![8](https://user-images.githubusercontent.com/24645219/42769237-79cbe810-88d6-11e8-8ad0-d6b945f029fd.png)
 
@@ -85,19 +85,19 @@ Wait for the configuration check to complete
 
 ![9](https://user-images.githubusercontent.com/24645219/42769241-7d02c850-88d6-11e8-87de-28b483ac38c1.png)
 
-The server will be in a drifted state.  Click the â€œConfigurationâ€ tab to see the details of the drift
+The server will be in a drifted state.  Click the “Configuration” tab to see the details of the drift
 
 ![10](https://user-images.githubusercontent.com/24645219/42769245-7f7ec610-88d6-11e8-89ab-4d6830fb6ec5.png)
 
-Click the â€œMyFirstOtterVarâ€ entry in the â€œDSC-Environmentâ€ section, and you will see a dialog like:
+Click the “MyFirstOtterVar” entry in the “DSC-Environment” section, and you will see a dialog like:
 
 ![11](https://user-images.githubusercontent.com/24645219/42769792-204b8e42-88d8-11e8-948d-5100e28af77d.png)
 
-Notice that the Ensure is â€œAbsentâ€. Click the Close button of the dialog.
+Notice that the Ensure is “Absent”. Click the Close button of the dialog.
 
 Now we will remediate this drift.  
 
-Click the â€œRemediate with Jobâ€ button and then click "Create Job"
+Click the “Remediate with Job” button and then click "Create Job"
 
 ![12](https://user-images.githubusercontent.com/24645219/42769253-86044f78-88d6-11e8-949b-54e01ba9e0ac.png)
 
@@ -113,8 +113,8 @@ To verify that the environment variable was really set, open a PowerShell consol
 [environment]::GetEnvironmentVariable("MyFirstOtterVar", "Machine")
 ~~~
 
-You should see â€œThis variable is set on LOCALâ€ printed out
+You should see “This variable is set on LOCAL” printed out
 
-Also, on the serverâ€™s configuration tab, you should now see
+Also, on the server’s configuration tab, you should now see
  
 ![15](https://user-images.githubusercontent.com/24645219/42769263-8ab7a88a-88d6-11e8-8516-0050143ee141.png)

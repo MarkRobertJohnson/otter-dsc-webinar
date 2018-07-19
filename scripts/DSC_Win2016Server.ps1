@@ -16,7 +16,7 @@ Configuration ServerConfig
             Ensure      = "Present"
             Name        = $var.name
             Value       = $var.value
-            Target      = @('Machine')
+            Target      = 'Machine'
         }
     }
 }

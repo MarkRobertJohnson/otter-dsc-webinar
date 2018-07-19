@@ -2,7 +2,7 @@
 
 $branches = @('dev','stage', 'test', 'prod')
 foreach($branch in $branches) {
-    git checkout $branches
+    git checkout $branch
     git pull
     $sha = "Initial Commit" | git commit-tree "HEAD^{tree}"; git reset $sha; git push --force
 }

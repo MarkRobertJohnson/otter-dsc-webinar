@@ -1,3 +1,11 @@
 ##AH:UseTextMode
 
+set @PowerShellModulesToRemove= @(cNtfsAccessControl,xWindowsUpdate,xWebAdministration);
+
+call EnsurePowerShellModules
+(
+    PowershellModules: @PowerShellModulesToRemove,
+    Ensure: Absent
+);
+
 call ServerDSCResources();

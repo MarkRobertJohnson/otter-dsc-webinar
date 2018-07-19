@@ -4,7 +4,7 @@ module SetEnvDSCResource
     PSDsc PSDscResources::Environment
     (
         Otter_ConfigurationKey: Name,
-        Name: MyFirstOtterVar,
+        Name: MyFirstOtterVar8,
         Value: This variable is set on $ServerName today,
         Ensure: Present,
         Target: "`@('Machine')"

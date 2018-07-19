@@ -1,0 +1,20 @@
+##AH:UseTextMode
+
+
+PSDsc File
+(
+    Otter_ConfigurationKey: DestinationPath,
+    DestinationPath: c:\temp\EnsuredFolder\My\Long\Path\To\A\Folder,
+    Type: Directory
+);
+
+PSDsc Registry
+(
+    Otter_ConfigurationKey:  Key,
+    Key: HKLM:\SOFTWARE\Inedo\Otter,
+    ValueName: Enabled3,
+    ValueData: @(0),
+    ValueType: DWORD,
+    Ensure: Present,
+    Force: true
+);

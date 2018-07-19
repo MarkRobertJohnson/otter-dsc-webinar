@@ -1,0 +1,17 @@
+##AH:UseTextMode
+module ServerDSCResources
+{
+    call BootstrapPowerShellGet();
+
+    call BootstrapChocolatey();
+    
+    call EnsurePowerShellModules
+    (
+        PowershellModules: @PowerShellModules,
+        Ensure: Present
+    );
+    
+    call SetEnvDSCResource();
+
+    call ConfigServer();
+}

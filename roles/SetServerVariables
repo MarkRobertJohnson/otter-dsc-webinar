@@ -1,0 +1,22 @@
+##AH:UseTextMode
+
+with executionPolicy=always
+{
+    Otter::Set-Variable
+    (
+        Name: VRAM,
+        Value: 2,
+        Sensitive: false,
+        Host: http://localhost:8626,
+        ApiKey: kCaEottQQHbdkb8RjDpC
+    );
+    
+    Otter::Set-Variable
+    (
+        Name: VCPU,
+        Value: 2,
+        Sensitive: false,
+        Host: http://localhost:8626,
+        ApiKey: kCaEottQQHbdkb8RjDpC
+    );
+}

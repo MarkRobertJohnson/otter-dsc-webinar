@@ -1,0 +1,12 @@
+##AH:UseTextMode
+module SetEnvDSCResource
+{
+    PSDsc PSDscResources::Environment
+    (
+        Otter_ConfigurationKey: Name,
+        Name: MyFirstOtterVar,
+        Value: This variable is set on $ServerName,
+        Ensure: Present,
+        Target: "`@('Machine')"
+    );
+}

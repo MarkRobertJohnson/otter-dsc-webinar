@@ -1,0 +1,34 @@
+##AH:UseTextMode
+
+
+PSDsc WindowsFeature
+(
+    Otter_ConfigurationKey: Name,
+    Name: Remote-Desktop-Services,
+    Ensure: Present
+);
+
+PSDsc WindowsFeature
+(
+    Otter_ConfigurationKey: Name,
+    Ensure: "Present",
+    Name: "RDS-RD-Server"
+);
+
+
+PSDsc WindowsFeature
+(
+    Otter_ConfigurationKey: Name,
+    Ensure: "Present",
+    Name: "RSAT-RDS-Tools",
+    IncludeAllSubFeature: true
+);
+
+
+PSDsc xRemoteDesktopSessionHost::xRDSessionDeployment
+(
+    Otter_ConfigurationKey: SessionHost,
+    SessionHost: localhost,
+    ConnectionBroker: localhost,
+    WebAccessServer: localhost
+);

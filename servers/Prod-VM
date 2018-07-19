@@ -1,0 +1,9 @@
+Log-Debug Production;
+
+PSEnsure
+(
+    Key: Prod Config,
+    Value: 0,
+    Collect: Write-Host "This will drift",
+    Configure: Write-Host "Remediate drift here"
+);

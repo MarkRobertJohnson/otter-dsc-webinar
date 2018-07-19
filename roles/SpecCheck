@@ -1,0 +1,86 @@
+##AH:UseTextMode
+
+
+PSEnsure
+(
+    Key: Spec Check: Memory,
+    Value: $VRAM,
+    Collect: "[math]::Round((Get-WmiObject -Class Win32_ComputerSystem).TotalPhysicalMemory / 1GB,3)",
+    Configure: Write-Host "Memory size mismatch"
+);
+
+PSEnsure
+(
+    Key: Spec Check: CPU,
+    Value: 0,
+    Collect: >>
+       if ((( `
+            ((Get-CimInstance -Class Win32_Processor | Measure-Object).Count) -eq $VCPU) `
+            -and ('$PhysicalVirtual' -match "VIRTUAL") `
+            -and ((Get-WmiObject -Class Win32_ComputerSystem).Manufacturer -match "VMware, Inc.")) `
+        -or `
+        ('$PhysicalVirtual' -notcontains "Physical") `
+       )
+       {
+              exit 0
+       }
+       else
+       {
+              exit -1
+       }>>,
+    Configure: Write-Host "CPU mismatch",
+    UseExitCode: true
+);
+
+PSEnsure
+(
+    Key: Spec Check: TimeZone is $TimeZone,
+    Value: $TimeZone,
+    Collect: "(Get-CimInstance -ClassName Win32_TimeZone).Caption",
+    Configure: Write-Host "Expected TimeZone to be $TimeZone.  Set TimeZone here"
+);
+
+PSEnsure
+(
+    Key: Spec Check: PowerShell version greater than $PSRequiredVersion,
+    Value: True,
+    Collect: $PSVersionTable.PSVersion -ge [System.Version]"$PSRequiredVersion",
+    Configure: Write-Host "Expected PowerShell version to be greater than or equal to $PSRequiredVersion.  Perform install here."
+);
+
+PSEnsure
+(
+    Key: Spec Check: Disk Allocation,
+    Value: 0,
+    Configure: Write-Host "Disk alloction was not correct.",
+    CollectScript: Test-DiskAllocation,
+    UseExitCode: true,
+    CollectScriptParams: %(
+VolumesToCheck: @(C:,D:)
+)
+);
+
+PSEnsure
+(
+    Key: Spec Check: .NET 4 version greater than of equal to $DotNet4Version,
+    Value: True,
+    Collect: >>(Get-ItemPropertyValue "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -Name Release -erroraction silentlycontinue) -ge 379893>>,
+    Configure: Write-Host "Expected .NET 4 version to be greater than $DotNet4Version.  Perform install here."
+);
+
+PSEnsure
+(
+    Key: Spec Check: .NET 3.5 installed,
+    Value: True,
+    Collect: >>(Get-ItemPropertyValue "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5" -Name Install  -erroraction silentlycontinue) -ge 1>>,
+    Configure: Write-Host "Expected .NET 3.5 to be installed"
+);
+
+
+
+
+
+
+
+
+

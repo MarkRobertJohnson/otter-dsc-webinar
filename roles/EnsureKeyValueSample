@@ -1,0 +1,19 @@
+set %expectedServerVarValues = %(var1: "expectedValue1", var2: "expectedValue2" );
+
+foreach $varname in @MapKeys(%expectedServerVarValues)
+{
+    set $expectedVarValue = %expectedServerVarValues[$varname];
+
+    set $collectScript = $Eval("Write-Host '$varname = $expectedVarValue'; exit 1");
+    log-information $collectScript;
+    set $configureScript = $Eval("Write-Host 'Configure $varname = $expectedVarValue'");
+ log-information $configureScript;
+    PSEnsure
+    (
+        Key: $expectedVarValue,
+        Value: 0,
+        Collect: "if('SOME_ACTUAL_SERVER_VALUE' -like '$expectedVarValue') { exit 0; } else {exit 1}",
+        Configure: "Write-Host 'REMEDIATE THE VALUE HERE, IF POSSIBLE. Configure $varname = $expectedVarValue'",
+        UseExitCode: true
+    );
+}

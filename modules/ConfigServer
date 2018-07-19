@@ -1,0 +1,7 @@
+module ConfigServer
+{
+    Ensure-DSCConfig
+    (
+        DscScriptAsset: DSC_Win2016Server
+    );
+}

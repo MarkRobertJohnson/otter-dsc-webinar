@@ -1,0 +1,16 @@
+set @scripts = @(
+    Install-PowerShellModule,
+    Install-PowerShellModule.Tests
+);
+
+# Loop
+foreach $scriptName in @scripts
+{
+    Ensure-Asset
+    (
+        Name: $scriptName,
+        Raft: Default,
+        Type: Script,
+        Directory: " c:\PesterTestsForOtter"
+    );
+}

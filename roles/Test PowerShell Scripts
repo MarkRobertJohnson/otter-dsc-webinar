@@ -1,3 +1,6 @@
+##AH:UseTextMode
+
+
 set @scripts = @(
     Install-PowerShellModule,
     Install-PowerShellModule.Tests

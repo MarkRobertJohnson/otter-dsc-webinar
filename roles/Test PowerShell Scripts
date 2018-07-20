@@ -1,0 +1,5 @@
+Execute-PowerShell >>cd "c:\PesterTestsForOtter"
+Invoke-Pester>>
+(
+    Verbose: true
+);

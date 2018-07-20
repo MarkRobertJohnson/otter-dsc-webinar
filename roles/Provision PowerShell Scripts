@@ -2,8 +2,8 @@
 
 
 set @scripts = @(
-    Install-PowerShellModule,
-    Install-PowerShellModule.Tests
+    Install-PowerShellModule.ps1,
+    Install-PowerShellModule.Tests.ps1
 );
 
 # Loop
@@ -14,6 +14,6 @@ foreach $scriptName in @scripts
         Name: $scriptName,
         Raft: Default,
         Type: Script,
-        Directory: "c:\PesterTestsForOtter"
+        Directory: c:\PesterTestsForOtter
     );
 }

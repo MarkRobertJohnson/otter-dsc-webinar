@@ -3,17 +3,17 @@
     {
       "active": true,
       "environments": [
-        "Dev"
+        "Test"
       ],
       "roles": [
         "Server DSC Resources"
       ],
       "serverType": "powershell",
-      "credentialsName": "AzureVM-dev",
+      "credentialsName": "AzureVM-Test",
       "drift": "reportOnly",
       "tempPath": "c:\\OtterAgent",
       "wsManUrl": "http://13.66.231.186:5985/wsman",
-      "name": "Dev-VM",
+      "name": "Test-VM",
       "variables": {
       }
     },

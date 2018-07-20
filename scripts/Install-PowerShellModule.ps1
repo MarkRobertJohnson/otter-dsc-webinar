@@ -4,4 +4,5 @@ param(
     [string]$ModuleName)
 
 Write-Host "Installing module: $ModuleName"
-install-module -Name $ModuleName -Force -AllowClobber -verbose
+install-module -Name $ModuleName -Force -AllowClobber -verbose `
+            -SkipPublisherCheck -WhatIf:([bool]$WhatIfPreference.IsPresent)

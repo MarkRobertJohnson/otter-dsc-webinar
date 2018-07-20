@@ -1,0 +1,123 @@
+{
+  "servers": [
+    {
+      "active": true,
+      "environments": [
+        "Dev"
+      ],
+      "roles": [
+        "Server DSC Resources"
+      ],
+      "serverType": "powershell",
+      "credentialsName": "AzureVM-dev",
+      "drift": "reportOnly",
+      "tempPath": "c:\\OtterAgent",
+      "wsManUrl": "http://13.66.231.186:5985/wsman",
+      "name": "Dev-VM",
+      "variables": {
+      }
+    },
+    {
+      "active": true,
+      "environments": [
+        "Prod"
+      ],
+      "roles": [
+        "Server DSC Resources"
+      ],
+      "serverType": "powershell",
+      "credentialsName": "AzureVM-prod",
+      "drift": "reportOnly",
+      "tempPath": "c:\\OtterAgent",
+      "wsManUrl": "http://13.66.184.97:5985/wsman",
+      "name": "Prod-VM",
+      "variables": {
+      }
+    },
+    {
+      "active": true,
+      "environments": [
+        "Stage"
+      ],
+      "roles": [
+        "Server DSC Resources"
+      ],
+      "serverType": "powershell",
+      "credentialsName": "AzureVM-stage",
+      "drift": "reportOnly",
+      "tempPath": "c:\\OtterAgent",
+      "wsManUrl": "http://13.66.193.141:5985/wsman",
+      "name": "Stage-VM",
+      "variables": {
+      }
+    }
+  ],
+  "environments": [
+    {
+      "name": "Dev",
+      "variables": {}
+    },
+    {
+      "name": "Test",
+      "variables": {}
+    },
+    {
+      "name": "Prod",
+      "variables": {}
+    },
+    {
+      "name": "Stage",
+      "variables": {}
+    }
+  ],
+  "roles": [
+    {
+      "name": "IIS",
+      "variables": {}
+    },
+    {
+      "name": "Server DSC Resources",
+      "variables": {}
+    },
+    {
+      "name": "ApplyDSCResources",
+      "variables": {}
+    },
+    {
+      "name": "CheckDiskSpace",
+      "variables": {}
+    },
+    {
+      "name": "SecureRDP",
+      "variables": {}
+    },
+    {
+      "name": "Services",
+      "variables": {}
+    },
+    {
+      "name": "PSPackageConsumer",
+      "variables": {}
+    },
+    {
+      "name": "RDPServer",
+      "variables": {}
+    },
+    {
+      "name": "SpecCheck",
+      "variables": {}
+    },
+    {
+      "name": "SetServerVariables",
+      "variables": {}
+    },
+    {
+      "name": "Provision PowerShell Scripts",
+      "variables": {}
+    },
+    {
+      "name": "Test PowerShell Scripts",
+      "variables": {}
+    }
+  ]
+}

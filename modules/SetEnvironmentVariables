@@ -1,5 +1,6 @@
+##AH:UseTextMode
 ##AH:Description Sets machine-level environment variables
-module SetEnvironmentVariables<%Variables = %()>
+module SetEnvironmentVariables<%expectedServerVarValues = %()>
 {
     foreach $varname in @MapKeys(%expectedServerVarValues)
     {

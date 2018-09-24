@@ -2,16 +2,18 @@
 
 
 
-Log-Warning %ChocolateyPackagesBuild;
+Log-Warning $ChocolateyPackagesBuild;
 
-Log-Warning ChocolateyPackagesBuild;
+set %packages = %FromJson($ChocolateyPackagesBuild);
+
+Log-Warning $ChocolateyPackagesCommon;
 
 set $Source = "";
 
 # Loop over Module list to install
-foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)
+foreach $packageName in @MapKeys(%packages)
 {
-    set $packageVersion = %ChocolateyPackagesBuild[$packageName];
+    set $packageVersion = %packages[$packageName];
 
     Log-Information Ensuring Chocolatey package $packageName $packageVersion;
 

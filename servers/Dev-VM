@@ -1,5 +1,9 @@
 ##AH:UseTextMode
 
+
+Log-Warning %ChocolateyPackagesBuild;
+Log-Warning $ChocolateyPackagesBuild;
+
 set $Source = "";
 # Loop over Module list to install
 foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)

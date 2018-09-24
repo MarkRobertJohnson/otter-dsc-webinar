@@ -1,9 +1,9 @@
-ChocolateyPackagesBuild = %(
+%ChocolateyPackagesBuild = %(
     git.install: 2.18.0,
     nodejs.install: 10.11.0
 );
 
-ChocolateyPackagesCommon = %(
+%ChocolateyPackagesCommon = %(
     googlechrome: 69.0.3497.9200,
     notepadplusplus.install: 7.5.7,
     git.install: 2.18.0,

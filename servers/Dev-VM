@@ -1,0 +1,14 @@
+ # Loop over Module list to install
+    foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)
+    {
+        set $packageVersion = %PowershellModules[$packageName];
+
+        Log-Information Ensuring Chocolatey package $packageName $packageVersion;
+
+        Chocolatey::Ensure-Package
+        (
+            Name: $PackageName,
+            Version: $PackageVersion,
+            Source: $Source
+        );
+    }

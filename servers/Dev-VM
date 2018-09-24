@@ -1,10 +1,19 @@
 ##AH:UseTextMode
 
+set %ChocolateyPackagesBuild = %(
+    googlechrome: 69.0.3497.9200,
+    notepadplusplus.install: 7.5.7,
+    git.install: 2.18.0,
+    Sysinternals: 2018.7.19
+);
+
 
 Log-Warning %ChocolateyPackagesBuild;
+
 Log-Warning $ChocolateyPackagesBuild;
 
 set $Source = "";
+
 # Loop over Module list to install
 foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)
 {
@@ -19,3 +28,4 @@ foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)
         Source: $Source
     );
 }
+

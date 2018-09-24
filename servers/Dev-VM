@@ -1,6 +1,6 @@
 ##AH:UseTextMode
 
-set %ChocolateyPackagesBuild = %(
+set %Foo = %(
     googlechrome: 69.0.3497.9200,
     notepadplusplus.install: 7.5.7,
     git.install: 2.18.0,
@@ -8,16 +8,16 @@ set %ChocolateyPackagesBuild = %(
 );
 
 
-Log-Warning %ChocolateyPackagesBuild;
+Log-Warning %Foo;
 
-Log-Warning $ChocolateyPackagesBuild;
+Log-Warning Foo;
 
 set $Source = "";
 
 # Loop over Module list to install
-foreach $packageName in @MapKeys(%ChocolateyPackagesBuild)
+foreach $packageName in @MapKeys(%Foo)
 {
-    set $packageVersion = %ChocolateyPackagesBuild[$packageName];
+    set $packageVersion = %Foo[$packageName];
 
     Log-Information Ensuring Chocolatey package $packageName $packageVersion;
 

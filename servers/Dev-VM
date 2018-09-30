@@ -1,7 +1,3 @@
-##AH:UseTextMode
-
-
-
 Log-Warning $ChocolateyPackagesBuild;
 
 set %packages = %FromJson($ChocolateyPackagesBuild);
@@ -25,3 +21,21 @@ foreach $packageName in @MapKeys(%packages)
     );
 }
 
+Chocolatey::Ensure-Installed
+(
+    Version: latest,
+    Source: https://chocolatey.org/api/v2
+);
+
+Chocolatey::Ensure-Source
+(
+    Name: Internal,
+    Url: https://proget.local/chocolatey,
+    Credential: DomainCred
+);
+
+Chocolatey::Ensure-Feature
+(
+    Feature: checksumFiles,
+    Enabled: false
+);

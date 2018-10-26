@@ -69,8 +69,11 @@ Function Install-ADModule {
     Param(
         [switch]$Test = $false
     )
-
-    If ((Get-CimInstance Win32_OperatingSystem).Caption -like "*Windows 10*") {
+    $os = Get-CimInstance Win32_OperatingSystem
+    Write-Warning "OS Name: $($os.Caption)"
+    Write-Host ($os|ConvertTo-Json)
+    
+    If ($os.Caption -like "*Windows 10*") {
         Write-Verbose '---This system is running Windows 10'
     } Else {
         Write-Warning '---This system is not running Windows 10'

@@ -24,7 +24,7 @@ PSDsc WindowsFeature
     IncludeAllSubFeature: true
 );
 
-
+##hello
 PSDsc xRemoteDesktopSessionHost::xRDSessionDeployment
 (
     Otter_ConfigurationKey: SessionHost,

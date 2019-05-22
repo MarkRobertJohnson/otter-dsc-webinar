@@ -1,3 +1,6 @@
+##AH:UseTextMode
+# Verify
+
 Log-Warning $ChocolateyPackagesBuild;
 
 set %packages = %FromJson($ChocolateyPackagesBuild);
